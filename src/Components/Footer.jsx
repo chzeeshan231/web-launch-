@@ -181,10 +181,6 @@ const Footer = () => {
           <div className="flex items-center gap-8 text-gray-500 text-[13px]">
             <a href="#home" className="hover:text-white transition-colors">Privacy Policy</a>
             <div className="w-[1px] h-4 bg-zinc-800" />
-            <div className="bg-black p-1.5 rounded-md border border-zinc-800">
-              <img src={brandLogo} alt="Brand Logo" className="h-6 w-auto" />
-            </div>
-            <div className="w-[1px] h-4 bg-zinc-800" />
             <a href="#home" className="hover:text-white transition-colors">Terms of services</a>
           </div>
         </div>
