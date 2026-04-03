@@ -8,6 +8,7 @@ import {
 
 // --- Assets ---
 import logo from '../assets/logoo.png';
+import brandLogo from '../assets/brand-logo.png';
 
 const Footer = () => {
   const Motion = motion;
@@ -39,10 +40,13 @@ const Footer = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-3"
+            className="flex items-center gap-4"
           >
-            <div className=" p-2 rounded-lg">
-              <img src={logo} alt="WebLaunch" className="h-16 w-auto " />
+            <div className="p-2">
+              <img src={brandLogo} alt="Brand Logo" className="h-20 w-auto" />
+            </div>
+            <div className="p-2">
+              <img src={logo} alt="WebLaunch" className="h-12 w-auto" />
             </div>
           </Motion.div>
 
