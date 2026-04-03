@@ -173,9 +173,14 @@ const Footer = () => {
         {/* --- Bottom Footer Bar --- */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-zinc-900">
           {/* Left: Branding Logo */}
-          <div>
+          <a
+            href="https://www.codes-inc.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity"
+          >
             <img src={brandLogo} alt="Brand Logo" className="h-10 w-auto" />
-          </div>
+          </a>
           
           {/* Center: Copyright Text */}
           <p className="text-gray-500 text-[13px]">
