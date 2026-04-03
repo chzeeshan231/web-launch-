@@ -36,19 +36,10 @@ const Footer = () => {
         {/* --- Top Contact Bar --- */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10 mb-12">
           {/* Logo Section */}
-          <Motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center gap-6"
-          >
-            <div className="p-3 bg-white rounded-lg">
-              <img src={brandLogo} alt="Brand Logo" className="h-24 w-auto object-contain" />
-            </div>
-            <div className="p-2">
-              <img src={logo} alt="WebLaunch" className="h-12 w-auto object-contain" />
-            </div>
-          </Motion.div>
+          <div className="flex items-center gap-6">
+            <img src={brandLogo} alt="Brand Logo" className="h-20 w-auto" />
+            <img src={logo} alt="WebLaunch" className="h-12 w-auto" />
+          </div>
 
           {/* Contact Info */}
           <div className="flex flex-col md:flex-row gap-8 lg:gap-16">
