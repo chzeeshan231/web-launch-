@@ -171,15 +171,18 @@ const Footer = () => {
         </Motion.div>
 
         {/* --- Bottom Footer Bar --- */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 pt-8 border-t border-zinc-900">
-          <div className="flex items-center gap-4">
-            <div className="bg-black p-3 rounded-lg border">
-              <img src={brandLogo} alt="Brand Logo" className="h-12 w-auto" />
-            </div>
-            <p className="text-gray-500 text-[13px]">
-              © Copyright {currentYear} by TailorTree
-            </p>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-zinc-900">
+          {/* Left: Branding Logo */}
+          <div>
+            <img src={brandLogo} alt="Brand Logo" className="h-10 w-auto" />
           </div>
+          
+          {/* Center: Copyright Text */}
+          <p className="text-gray-500 text-[13px]">
+            © Copyright {currentYear} by TailorTree
+          </p>
+          
+          {/* Right: Links */}
           <div className="flex items-center gap-8 text-gray-500 text-[13px]">
             <a href="#home" className="hover:text-white transition-colors">Privacy Policy</a>
             <div className="w-[1px] h-4 bg-zinc-800" />
