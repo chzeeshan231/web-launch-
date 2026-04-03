@@ -171,9 +171,9 @@ const Footer = () => {
         </Motion.div>
 
         {/* --- Bottom Footer Bar --- */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-zinc-900">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 pt-8 border-t border-zinc-900">
           <div className="flex items-center gap-4">
-            <div className="bg-black p-3 rounded-lg border border-zinc-800">
+            <div className="bg-black p-3 rounded-lg border">
               <img src={brandLogo} alt="Brand Logo" className="h-12 w-auto" />
             </div>
             <p className="text-gray-500 text-[13px]">
