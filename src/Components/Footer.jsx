@@ -8,6 +8,7 @@ import {
 
 // --- Assets ---
 import logo from '../assets/logoo.png';
+import brandLogo from '../assets/brand-logo.png';
 
 const Footer = () => {
   const Motion = motion;
@@ -172,18 +173,17 @@ const Footer = () => {
         {/* --- Bottom Footer Bar --- */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-zinc-900">
           {/* Left: Branding Logo */}
-          <a href="https://www.codes-inc.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <span className="text-[11px] uppercase tracking-[0.22em] text-gray-400">Designed and hosted by</span>
-            <span className="text-xl font-bold text-white leading-none">Codesinc.</span>
-          </a>
+          <div>
+            <img src={brandLogo} alt="Brand Logo" className="h-10 w-auto" />
+          </div>
           
           {/* Center: Copyright Text */}
-          <p className="text-white text-[13px]">
+          <p className="text-gray-500 text-[13px]">
             © Copyright {currentYear} by TailorTree
           </p>
           
           {/* Right: Links */}
-          <div className="flex items-center gap-8 text-white text-[13px]">
+          <div className="flex items-center gap-8 text-gray-500 text-[13px]">
             <a href="#home" className="hover:text-white transition-colors">Privacy Policy</a>
             <div className="w-[1px] h-4 bg-zinc-800" />
             <a href="#home" className="hover:text-white transition-colors">Terms of services</a>
