@@ -37,9 +37,6 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10 mb-12">
           {/* Logo Section */}
           <div className="flex items-center gap-6">
-            <div className="bg-black p-4 rounded-xl border border-zinc-800">
-              <img src={brandLogo} alt="Brand Logo" className="h-20 w-auto" />
-            </div>
             <img src={logo} alt="WebLaunch" className="h-14 w-auto" />
           </div>
 
@@ -175,9 +172,14 @@ const Footer = () => {
 
         {/* --- Bottom Footer Bar --- */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-zinc-900">
-          <p className="text-gray-500 text-[13px]">
-            © Copyright {currentYear} by TailorTree
-          </p>
+          <div className="flex items-center gap-4">
+            <div className="bg-black p-3 rounded-lg border border-zinc-800">
+              <img src={brandLogo} alt="Brand Logo" className="h-12 w-auto" />
+            </div>
+            <p className="text-gray-500 text-[13px]">
+              © Copyright {currentYear} by TailorTree
+            </p>
+          </div>
           <div className="flex items-center gap-8 text-gray-500 text-[13px]">
             <a href="#home" className="hover:text-white transition-colors">Privacy Policy</a>
             <div className="w-[1px] h-4 bg-zinc-800" />
