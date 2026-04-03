@@ -400,8 +400,13 @@ const AgencyLanding = () => {
             </Motion.div>
 
             {/* Founder Section */}
-            <Motion.div variants={revealUp} className="flex flex-col items-center text-center gap-4 sm:gap-5 lg:gap-6 lg:items-start lg:text-left">
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-5">
+            <Motion.div variants={revealUp} className="flex flex-col items-center text-center gap-4 sm:gap-5 lg:gap-0 lg:flex-row lg:items-center lg:text-left lg:justify-between">
+              <p className="text-xl sm:text-2xl lg:text-2xl font-bold leading-tight order-2 lg:order-1">
+                <span className="lg:hidden whitespace-nowrap">Founder & Director</span>
+                <span className="hidden lg:block whitespace-nowrap">Founder &</span>
+                <span className="hidden lg:block">Director</span>
+              </p>
+              <div className="flex flex-wrap justify-center lg:justify-end gap-4 sm:gap-5 order-1 lg:order-2">
                 <div className="text-center">
                   <img src={p1} alt="Founder 1" className="w-16 h-16 rounded-lg mb-2 shadow-sm" />
                   <p className="text-[10px] font-bold whitespace-nowrap">Max Subberg</p>
@@ -411,11 +416,6 @@ const AgencyLanding = () => {
                   <p className="text-[10px] font-bold whitespace-nowrap">Henry McCandless</p>
                 </div>
               </div>
-              <p className="text-xl sm:text-2xl font-bold leading-tight">
-                <span className="lg:hidden whitespace-nowrap">Founder & Director</span>
-                <span className="hidden lg:block whitespace-nowrap">Founder &</span>
-                <span className="hidden lg:block">Director</span>
-              </p>
             </Motion.div>
           </Motion.div>
 
