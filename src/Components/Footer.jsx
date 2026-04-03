@@ -37,8 +37,10 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10 mb-12">
           {/* Logo Section */}
           <div className="flex items-center gap-6">
-            <img src={brandLogo} alt="Brand Logo" className="h-20 w-auto" />
-            <img src={logo} alt="WebLaunch" className="h-12 w-auto" />
+            <div className="bg-black p-4 rounded-xl border border-zinc-800">
+              <img src={brandLogo} alt="Brand Logo" className="h-20 w-auto" />
+            </div>
+            <img src={logo} alt="WebLaunch" className="h-14 w-auto" />
           </div>
 
           {/* Contact Info */}
