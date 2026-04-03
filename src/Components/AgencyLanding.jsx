@@ -401,11 +401,6 @@ const AgencyLanding = () => {
 
             {/* Founder Section */}
             <Motion.div variants={revealUp} className="flex flex-col items-center text-center gap-4 sm:gap-5 lg:gap-6 lg:items-start lg:text-left">
-              <p className="text-xl sm:text-2xl font-bold leading-tight">
-                <span className="lg:hidden whitespace-nowrap">Founder & Director</span>
-                <span className="hidden lg:block whitespace-nowrap">Founder &</span>
-                <span className="hidden lg:block">Director</span>
-              </p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-5">
                 <div className="text-center">
                   <img src={p1} alt="Founder 1" className="w-16 h-16 rounded-lg mb-2 shadow-sm" />
@@ -416,6 +411,11 @@ const AgencyLanding = () => {
                   <p className="text-[10px] font-bold whitespace-nowrap">Henry McCandless</p>
                 </div>
               </div>
+              <p className="text-xl sm:text-2xl font-bold leading-tight">
+                <span className="lg:hidden whitespace-nowrap">Founder & Director</span>
+                <span className="hidden lg:block whitespace-nowrap">Founder &</span>
+                <span className="hidden lg:block">Director</span>
+              </p>
             </Motion.div>
           </Motion.div>
 
