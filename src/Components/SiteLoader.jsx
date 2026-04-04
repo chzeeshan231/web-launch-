@@ -197,7 +197,7 @@ export default function SiteLoader({ isVisible = true }) {
             </div>
 
             {/* Wordmark */}
-            <div className="overflow-hidden mb-1 w-full max-w-[320px]">
+            <div className="overflow-hidden sm:overflow-visible mb-1 w-full max-w-[320px] sm:max-w-[560px] lg:max-w-none">
               <Motion.div
                 className="flex flex-col sm:flex-row items-center justify-center gap-0 leading-none"
                 initial={{ y: 48, opacity: 0 }}
