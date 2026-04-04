@@ -41,11 +41,11 @@ const Services = () => {
   const CARD_BG = "#54652a";
 
   return (
-    <section id="services" className={`py-24 overflow-hidden scroll-mt-24`} style={{ backgroundColor: SECTION_BG }}>
+    <section id="services" className={`py-14 sm:py-18 lg:py-20 overflow-hidden scroll-mt-24`} style={{ backgroundColor: SECTION_BG }}>
       <div className="max-w-7xl mx-auto px-6">
         
         {/* --- Header Section --- */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 sm:mb-14">
           <Motion.div 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

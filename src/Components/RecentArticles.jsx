@@ -1,41 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CalendarDays } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 // --- Assets ---
 import aboutLogo from '../assets/about.png';
-import img1 from '../assets/img1.jpg';
-import img2 from '../assets/img2.jpg';
-import img3 from '../assets/img3.jpg';
+import { articles } from '../data/articles';
 
 const RecentArticles = () => {
   const Motion = motion;
-  const blogs = [
-    {
-      id: 1,
-      image: img1,
-      tag: 'Design',
-      date: 'July 31, 2025',
-      title: 'Simple Tips for Better Website Design',
-      desc: 'Learn easy ways to improve your website’s look and feel. easy step for you'
-    },
-    {
-      id: 2,
-      image: img2,
-      tag: 'Design',
-      date: 'July 31, 2025',
-      title: 'How to Speed Up Your Website Fast loading',
-      desc: 'Quick fixes to make your site load faster. How great user experience boosts your business'
-    },
-    {
-      id: 3,
-      image: img3,
-      tag: 'Design',
-      date: 'July 31, 2025',
-      title: 'Best Tools for App Development Today world',
-      desc: 'Keep your site safe with simple security tips best tools to build apps easily and quickly'
-    }
-  ];
+  const navigate = useNavigate();
 
   const renderBlogCard = (blog, index, compact = false) => (
     <Motion.div
@@ -44,14 +18,23 @@ const RecentArticles = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className={`group flex flex-col ${compact ? 'w-[230px] shrink-0' : ''}`}
+      className={`group flex flex-col cursor-pointer ${compact ? 'w-[230px] shrink-0' : ''}`}
+      onClick={() => navigate(`/articles/${blog.id}`)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          navigate(`/articles/${blog.id}`);
+        }
+      }}
     >
       {/* Image with hover effect */}
       <div className={`overflow-hidden relative z-10 ${compact ? 'rounded-[18px] mb-[-22px]' : 'rounded-[22px] mb-[-32px]'}`}>
         <img
           src={blog.image}
           alt={blog.title}
-          className={`w-full object-cover transition-transform duration-700 group-hover:scale-110 ${compact ? 'aspect-[4/3]' : 'h-100 aspect-[4/3]'}`}
+          className={`w-full object-cover transition-transform duration-700 group-hover:scale-110 ${compact ? 'aspect-[16/10]' : 'aspect-[16/10]'}`}
         />
       </div>
 
@@ -83,11 +66,11 @@ const RecentArticles = () => {
   )
 
   return (
-    <section id="blogs" className="py-24 bg-white overflow-hidden scroll-mt-24">
+    <section id="blogs" className="py-14 sm:py-18 lg:py-20 bg-white overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* --- Header Section --- */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-10 sm:mb-12">
           <div className="space-y-4">
             <Motion.div 
               initial={{ opacity: 0, x: -20 }}
@@ -105,16 +88,20 @@ const RecentArticles = () => {
               viewport={{ once: true }}
               className="text-2xl lg:text-6xl font-bold text-slate-900"
             >
-              Read Our Recants Article
+              Read Our Recent Article
             </Motion.h2>
           </div>
 
           <Motion.a
-            href="#blogs"
+            href="/articles"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.05 }}
+            onClick={(event) => {
+              event.preventDefault();
+              navigate('/articles');
+            }}
             className="bg-[#CFFE25] text-slate-900 px-8 py-4 rounded-full font-bold text-sm shadow-lg shadow-[#CFFE25]/20 self-start md:self-auto"
           >
             Browse All Article
@@ -128,13 +115,13 @@ const RecentArticles = () => {
             animate={{ x: ['-50%', '0%'] }}
             transition={{ ease: 'linear', duration: 24, repeat: Infinity }}
           >
-            {[...blogs, ...blogs].map((blog, index) => renderBlogCard(blog, index, true))}
+            {[...articles, ...articles].map((blog, index) => renderBlogCard(blog, index, true))}
           </Motion.div>
         </div>
 
         {/* --- Blogs Grid Desktop --- */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogs.map((blog, index) => renderBlogCard(blog, index, false))}
+          {articles.map((blog, index) => renderBlogCard(blog, index, false))}
         </div>
 
       </div>

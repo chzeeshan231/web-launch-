@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { PhoneCall } from 'lucide-react';
 
 // --- Assets ---
 import main2 from '../assets/main2.png';
@@ -8,7 +9,6 @@ import icon1 from '../assets/icon1.png';
 import icon2 from '../assets/icon2.png';
 import icon3 from '../assets/icon3.png';
 import icon4 from '../assets/icon4.png';
-import callIcon from '../assets/call.png';
 
 const AboutSection = () => {
   const Motion = motion;
@@ -42,7 +42,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="py-12 sm:py-16 bg-white overflow-hidden scroll-mt-24">
+    <section id="about" className="py-10 sm:py-12 bg-white overflow-hidden scroll-mt-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* --- Top Header Section --- */}
@@ -51,7 +51,7 @@ const AboutSection = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-center mb-10 sm:mb-12"
+          className="text-center mb-8 sm:mb-10"
         >
           <Motion.div 
             variants={fadeUp}
@@ -78,7 +78,7 @@ const AboutSection = () => {
         </Motion.div>
 
         {/* --- Main Content Grid --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-7 lg:gap-9 items-center">
           
           {/* Left: Custom Shaped Image */}
           <Motion.div 
@@ -148,19 +148,19 @@ const AboutSection = () => {
             {/* Bottom Actions */}
             <Motion.div 
               variants={fadeUp}
-              className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-4 sm:gap-5 mt-2"
+              className="flex w-full flex-row sm:flex-row sm:flex-wrap items-center gap-3 sm:gap-5 mt-2"
             >
-              <a href="#contact" className="bg-[#CFFE25] text-slate-900 px-6 sm:px-8 py-3 rounded-full font-bold text-[14px] sm:text-[15px] shadow-md shadow-[#CFFE25]/25 hover:scale-105 transition-transform active:scale-95 whitespace-nowrap">
+              <a href="#contact" className="bg-[#CFFE25] text-slate-900 px-5 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold text-[13px] sm:text-[15px] shadow-md shadow-[#CFFE25]/25 hover:scale-105 transition-transform active:scale-95 whitespace-nowrap">
                 More About Us
               </a>
 
               <div className="flex items-center gap-3 sm:gap-4">
-                <div className="bg-[#F8F9FA] p-3 rounded-xl border border-gray-100">
-                  <img src={callIcon} alt="call" className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
+                <div className="bg-[#F8F9FA] p-2.5 sm:p-3 rounded-xl border border-gray-100 text-slate-700">
+                  <PhoneCall size={16} className="sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <p className="text-[10px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-wide">Get free Qoute</p>
-                  <p className="text-[14px] sm:text-[16px] font-bold text-slate-900 leading-none whitespace-nowrap">22 (00) 356 7890</p>
+                  <p className="text-[9px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-wide">Get free Qoute</p>
+                  <p className="text-[13px] sm:text-[16px] font-bold text-slate-900 leading-none whitespace-nowrap">22 (00) 356 7890</p>
                 </div>
               </div>
             </Motion.div>

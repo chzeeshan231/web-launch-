@@ -86,11 +86,7 @@ const AgencyLanding = () => {
     setMobileDropdown(null)
   }
 
-  const triggerTickBurst = (event) => {
-    const rect = event.currentTarget.getBoundingClientRect()
-    const originX = rect.left + rect.width / 2
-    const originY = rect.top + rect.height / 2
-
+  const createTickBurst = (originX, originY) => {
     const burstId = Date.now()
     const particles = Array.from({ length: 18 }).map((_, index) => {
       const angle = (Math.PI * 2 * index) / 18
@@ -115,6 +111,21 @@ const AgencyLanding = () => {
       setTickBursts((prev) => prev.filter((item) => !String(item.id).startsWith(String(burstId))))
     }, 1900)
   }
+
+  const triggerTickBurst = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect()
+    const originX = rect.left + rect.width / 2
+    const originY = rect.top + rect.height / 2
+    createTickBurst(originX, originY)
+  }
+
+  useEffect(() => {
+    const autoBurstTimer = setTimeout(() => {
+      createTickBurst(window.innerWidth / 2, window.innerHeight / 2)
+    }, 280)
+
+    return () => clearTimeout(autoBurstTimer)
+  }, [])
 
   return (
     <div id="home" className="min-h-screen bg-white font-sans text-slate-900 overflow-x-hidden scroll-mt-24">
@@ -400,19 +411,19 @@ const AgencyLanding = () => {
             </Motion.div>
 
             {/* Founder Section */}
-            <Motion.div variants={revealUp} className="flex flex-col items-center text-center gap-4 sm:gap-5 lg:gap-8 lg:flex-row lg:items-center lg:text-left lg:justify-start">
-              <p className="text-xl sm:text-2xl lg:text-2xl font-bold leading-tight order-2 lg:order-1 whitespace-nowrap">
+            <Motion.div variants={revealUp} className="flex flex-col items-start text-left gap-4 sm:gap-5 lg:gap-8 lg:flex-row lg:items-center lg:text-left lg:justify-start">
+              <p className="text-xl sm:text-2xl lg:text-2xl font-bold leading-tight order-1 lg:order-1 whitespace-nowrap">
                 <span className="lg:hidden whitespace-nowrap">Founder & Director</span>
                 <span className="hidden lg:block whitespace-nowrap">Founder &</span>
                 <span className="hidden lg:block">Director</span>
               </p>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-5 order-1 lg:order-2">
-                <div className="text-center">
-                  <img src={p1} alt="Founder 1" className="w-16 h-16 rounded-lg mb-2 shadow-sm" />
+              <div className="flex w-full sm:w-auto justify-start sm:justify-center lg:justify-start gap-4 sm:gap-5 order-2 lg:order-2">
+                <div className="text-left sm:text-center">
+                  <img src={p1} alt="Founder 1" className="w-20 h-20 sm:w-16 sm:h-16 rounded-lg mb-2 shadow-sm" />
                   <p className="text-[10px] font-bold whitespace-nowrap">Max Subberg</p>
                 </div>
-                <div className="text-center">
-                  <img src={p2} alt="Founder 2" className="w-16 h-16 rounded-lg mb-2 shadow-sm" />
+                <div className="text-left sm:text-center">
+                  <img src={p2} alt="Founder 2" className="w-20 h-20 sm:w-16 sm:h-16 rounded-lg mb-2 shadow-sm" />
                   <p className="text-[10px] font-bold whitespace-nowrap">Henry McCandless</p>
                 </div>
               </div>
@@ -472,8 +483,8 @@ const AgencyLanding = () => {
       </main>
 
       {/* --- PARTNERS LOGOS (Continuous Auto-Scroll) --- */}
-      <footer className="relative bg-gray-50/50 py-14 sm:py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center mb-10 sm:mb-16">
+      <footer className="relative bg-gray-50/50 py-10 sm:py-14 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center mb-8 sm:mb-10">
             <span className="inline-flex items-center bg-white px-3 sm:px-4 py-1.5 rounded-full text-[9px] sm:text-[10px] font-bold text-gray-400 shadow-sm border border-gray-100 uppercase tracking-[0.18em] whitespace-nowrap">
               Trusted Partners Worldwide For Success
             </span>

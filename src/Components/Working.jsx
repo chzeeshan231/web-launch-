@@ -31,10 +31,10 @@ const WorkingProcess = () => {
   ];
 
   return (
-    <section id="working-process" className="py-12 bg-white scroll-mt-24">
+    <section id="working-process" className="py-10 sm:py-12 bg-white scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Main Light Gray Container */}
-        <div className="bg-[#F8F9FA] rounded-[48px] p-8 md:p-20 grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 items-start">
+        <div className="bg-[#F8F9FA] rounded-[48px] p-6 sm:p-8 md:p-16 grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 md:gap-10 items-start">
           
           {/* Left Side Content */}
           <Motion.div 

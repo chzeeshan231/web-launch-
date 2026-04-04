@@ -34,11 +34,11 @@ const RecentProjects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-white overflow-hidden scroll-mt-24">
+    <section id="projects" className="py-14 sm:py-18 lg:py-20 bg-white overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* --- Header Section --- */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 sm:mb-14">
           <Motion.div 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

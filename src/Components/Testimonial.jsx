@@ -54,11 +54,11 @@ const Testimonials = () => {
   const scrollReviews = [...reviews, ...reviews];
 
   return (
-    <section id="testimonial" className="py-24 bg-white overflow-hidden scroll-mt-24">
+    <section id="testimonial" className="py-14 sm:py-18 lg:py-20 bg-white overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* --- Header Section --- */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-12">
           <Motion.div 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -144,7 +144,7 @@ const Testimonials = () => {
         </div>
 
         {/* --- Custom Pagination (Purely Visual like the Image) --- */}
-        <div className="flex justify-center gap-2 mt-12">
+        <div className="flex justify-center gap-2 mt-8 sm:mt-10">
           <div className="w-2 h-2 rounded-full bg-gray-200" />
           <div className="w-6 h-2 rounded-full bg-[#CFFE25]" />
           <div className="w-2 h-2 rounded-full bg-gray-200" />

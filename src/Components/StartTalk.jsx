@@ -7,14 +7,14 @@ import bgImg from '../assets/bg.jpg';
 const StartTalkCTA = () => {
   const Motion = motion;
   return (
-    <section id="contact" className="py-12 bg-white px-6 scroll-mt-24">
+    <section id="contact" className="py-10 sm:py-12 bg-white px-6 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <Motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative overflow-hidden rounded-[40px] md:rounded-[60px] py-16 md:py-24 px-6 text-center shadow-2xl"
+          className="relative overflow-hidden rounded-[40px] md:rounded-[60px] py-12 sm:py-14 md:py-20 px-6 text-center shadow-2xl"
           style={{
             backgroundImage: `url(${bgImg})`,
             backgroundSize: 'cover',

@@ -150,10 +150,10 @@ export default function SiteLoader({ isVisible = true }) {
           ))}
 
           {/* ── Center content ── */}
-          <div className="relative z-10 flex min-h-screen flex-col items-center justify-center">
+          <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 py-8">
 
             {/* Orbital system */}
-            <div className="relative mb-10 flex h-40 w-40 items-center justify-center">
+            <div className="relative mb-7 sm:mb-10 flex h-28 w-28 sm:h-40 sm:w-40 items-center justify-center">
 
               {/* Outer slow ring + dot */}
               <Motion.div
@@ -166,7 +166,7 @@ export default function SiteLoader({ isVisible = true }) {
 
               {/* Mid ring + bright dot */}
               <Motion.div
-                className="absolute inset-[18px] rounded-full border-2 border-[#CFFE25]/25"
+                className="absolute inset-[14px] sm:inset-[18px] rounded-full border-2 border-[#CFFE25]/25"
                 animate={{ rotate: -360 }}
                 transition={{ duration: 3.5, ease: 'linear', repeat: Infinity }}
               >
@@ -175,7 +175,7 @@ export default function SiteLoader({ isVisible = true }) {
 
               {/* Inner dashed ring */}
               <Motion.div
-                className="absolute inset-[36px] rounded-full border border-dashed border-[#CFFE25]/18"
+                className="absolute inset-[28px] sm:inset-[36px] rounded-full border border-dashed border-[#CFFE25]/18"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 2, ease: 'linear', repeat: Infinity }}
               />
@@ -197,31 +197,31 @@ export default function SiteLoader({ isVisible = true }) {
             </div>
 
             {/* Wordmark */}
-            <div className="overflow-hidden mb-1">
+            <div className="overflow-hidden mb-1 w-full max-w-[320px]">
               <Motion.div
-                className="flex items-baseline gap-0"
+                className="flex flex-col sm:flex-row items-center justify-center gap-0 leading-none"
                 initial={{ y: 48, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
               >
                 <span
-                  className="text-[36px] font-extrabold leading-none tracking-[-1px] text-[#CFFE25]"
+                  className="text-[28px] sm:text-[36px] font-extrabold leading-none tracking-[-0.5px] sm:tracking-[-1px] text-[#CFFE25]"
                   style={{ fontFamily: "'Syne', sans-serif" }}
                 >
                   WEB
                 </span>
                 <span
-                  className="text-[36px] font-extrabold leading-none tracking-[-1px] text-white/90"
+                  className="text-[28px] sm:text-[36px] font-extrabold leading-none tracking-[-0.5px] sm:tracking-[-1px] text-white/90"
                   style={{ fontFamily: "'Syne', sans-serif" }}
                 >
-                  &thinsp;LAUNCH
+                  LAUNCH
                 </span>
               </Motion.div>
             </div>
 
             {/* Tagline */}
             <Motion.p
-              className="mb-10 text-[11px] uppercase tracking-[3.5px] text-[#CFFE25]/55"
+              className="mb-7 sm:mb-10 text-[10px] sm:text-[11px] uppercase tracking-[2.2px] sm:tracking-[3.5px] text-[#CFFE25]/55 text-center"
               style={{ fontFamily: "'DM Mono', monospace", fontWeight: 300 }}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -232,7 +232,7 @@ export default function SiteLoader({ isVisible = true }) {
 
             {/* Progress bar */}
             <Motion.div
-              className="flex w-60 flex-col gap-3"
+              className="flex w-[86vw] max-w-60 flex-col gap-3"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}

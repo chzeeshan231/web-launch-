@@ -30,11 +30,11 @@ const Footer = () => {
   ];
 
   return (
-    <footer id="footer" className="bg-black text-white pt-20 pb-10 overflow-hidden scroll-mt-24">
+    <footer id="footer" className="bg-black text-white pt-14 sm:pt-16 pb-8 sm:pb-10 overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* --- Top Contact Bar --- */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10 mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-7 sm:gap-8 mb-9 sm:mb-10">
           {/* Logo Section */}
           <div className="flex items-center gap-6">
             <img src={logo} alt="WebLaunch" className="h-14 w-auto" />
@@ -76,10 +76,10 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="w-full h-[1px] bg-zinc-800 mb-16" />
+        <div className="w-full h-[1px] bg-zinc-800 mb-10 sm:mb-12" />
 
         {/* --- Main Content Grid --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 mb-12 sm:mb-14">
           
           {/* Column 1: About */}
           <Motion.div 
@@ -171,27 +171,48 @@ const Footer = () => {
         </Motion.div>
 
         {/* --- Bottom Footer Bar --- */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-zinc-900">
-          {/* Left: Branding Logo */}
-          <a
-            href="https://www.codes-inc.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:opacity-80 transition-opacity"
-          >
-            <img src={brandLogo} alt="Brand Logo" className="h-10 w-auto" />
-          </a>
-          
-          {/* Center: Copyright Text */}
-          <p className="text-gray-500 text-[13px]">
-            © Copyright {currentYear} by TailorTree
-          </p>
-          
-          {/* Right: Links */}
-          <div className="flex items-center gap-8 text-gray-500 text-[13px]">
+        <div className="pt-8 border-t border-zinc-900">
+          {/* Mobile: keep branding + copyright on one line */}
+          <div className="md:hidden flex items-center justify-center gap-2">
+            <a
+              href="https://www.codes-inc.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity shrink-0"
+            >
+              <img src={brandLogo} alt="Brand Logo" className="h-7 w-auto" />
+            </a>
+            <p className="text-gray-500 text-[10px] whitespace-nowrap leading-none">
+              © Copyright {currentYear} by TailorTree
+            </p>
+          </div>
+
+          <div className="md:hidden mt-4 flex items-center justify-center gap-8 text-gray-500 text-[12px]">
             <a href="#home" className="hover:text-white transition-colors">Privacy Policy</a>
             <div className="w-[1px] h-4 bg-zinc-800" />
             <a href="#home" className="hover:text-white transition-colors">Terms of services</a>
+          </div>
+
+          {/* Desktop: original layout */}
+          <div className="hidden md:flex items-center justify-between gap-6">
+            <a
+              href="https://www.codes-inc.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
+              <img src={brandLogo} alt="Brand Logo" className="h-10 w-auto" />
+            </a>
+
+            <p className="text-gray-500 text-[13px]">
+              © Copyright {currentYear} by TailorTree
+            </p>
+
+            <div className="flex items-center gap-8 text-gray-500 text-[13px]">
+              <a href="#home" className="hover:text-white transition-colors">Privacy Policy</a>
+              <div className="w-[1px] h-4 bg-zinc-800" />
+              <a href="#home" className="hover:text-white transition-colors">Terms of services</a>
+            </div>
           </div>
         </div>
 
